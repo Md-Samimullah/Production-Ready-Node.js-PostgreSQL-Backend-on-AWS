@@ -28,3 +28,32 @@ Nginx (Port 80)
 Node.js App (Port 3000)
 ↓
 PostgreSQL RDS (Port 5432)
+---
+
+## 🚀 Features
+
+- REST API to fetch test case data
+- PostgreSQL database integration
+- Secure credentials using environment variables
+- Reverse proxy using Nginx
+- Process management and auto-restart using PM2
+- Production-ready deployment on AWS EC2
+
+---
+
+## ⚙️ Setup & Installation
+
+### 1️⃣ Launch EC2 Instance
+- Amazon Linux
+- Open inbound ports:
+  - 22 (SSH)
+  - 80 (HTTP)
+  - 5432 (PostgreSQL – internal access)
+
+---
+
+### 2️⃣ Install Required Packages
+
+```bash
+sudo yum update -y
+sudo yum install nodejs nginx -y
