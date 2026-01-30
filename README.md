@@ -57,3 +57,49 @@ PostgreSQL RDS (Port 5432)
 ```bash
 sudo yum update -y
 sudo yum install nodejs nginx -y
+mkdir WebCompute
+cd WebCompute
+npm init -y
+npm install pg dotenv pm2
+```
+create .env file: 
+DB_HOST=<RDS_ENDPOINT>
+DB_USER=postgres
+DB_PASSWORD=<password>
+DB_NAME=postgres
+
+---------------
+
+🔁 Process Management (PM2)
+pm2 start service.js
+pm2 startup
+pm2 save
+
+🌐 Nginx Reverse Proxy
+
+Edit config:
+
+sudo nano /etc/nginx/nginx.conf
+
+location / {
+  proxy_pass http://localhost:3000;
+}
+
+
+Restart:
+
+sudo systemctl restart nginx
+
+🧪 Testing
+curl http://localhost:3000
+curl http://localhost:3000/tests
+
+✅ Final Outcome
+
+Backend successfully deployed on AWS
+
+Database connected securely
+
+App running continuously in production
+
+Industry-standard backend architecture
