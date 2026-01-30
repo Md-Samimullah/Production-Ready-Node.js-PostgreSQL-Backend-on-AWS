@@ -21,3 +21,10 @@ The application exposes REST APIs that fetch data from a PostgreSQL database and
 ---
 
 ## 🏗️ Architecture
+Browser
+↓
+Nginx (Port 80)
+↓
+Node.js App (Port 3000)
+↓
+PostgreSQL RDS (Port 5432)
